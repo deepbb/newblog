@@ -1,0 +1,77 @@
+.settings {
+    display: flex;
+}
+.settings-wrapper{
+    flex: 9;
+    margin-left: 20px;
+}
+.settings-title{
+    display: flex;
+    justify-content: space-between;
+}
+.settings-update{
+    font-size: 30px;
+    color: lightcoral;
+}
+.settings-delete{
+    font-size: 30px;
+    color:tomato;
+    cursor: pointer;
+}
+.profile-pic{
+    font-size: 20px;
+    color: lightslategrey;
+}
+.prof-btn{
+    align-self:flex-end;
+}
+.settings-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.settings-profilepic{
+    display: flex;
+    align-items: center;
+}
+.settings-profilepic > label {
+    margin-left: 10px;
+}
+.icon{
+    font-size: 30px;
+    cursor: pointer;
+    color:teal;
+}
+.settings-img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-top: 10px;
+
+}
+.settings-form > label {
+    margin-top: 20px;
+    font-size: 18px;
+    color: lightslategray;
+}
+.settings-form > input {
+    margin-top: 10px;
+    border:none;
+    height: 30px;
+    border-bottom: 1px solid lightslategray;
+}
+.settings-form > input:focus {
+    outline: none;
+}
+.settings-form > button {
+    margin-top: 20px;
+    border:none;
+    height: 30px;
+    background-color: teal;
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+    align-self: center;
+    cursor: pointer;
+}

@@ -1,0 +1,56 @@
+.singlepost-display{
+    display: flex;
+    margin-left: 20px;
+}
+
+.singlepost{
+    flex: 9;
+}
+.Singlepost-sidebar{
+    flex: 3;
+}
+.singlepost-img{
+    width: 100%;
+    height: 350px;
+    border-radius: 20px;
+}
+.singlepost-wrapper{
+    padding: 30px;
+    padding-right: 0;
+}
+.singlepost-title{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 10px;
+}
+.singlepost-icon{
+    float: right;
+    margin-right: 10px;
+}
+.iconEdit{
+    margin-right: 10px;
+    color: teal;
+    cursor: pointer;
+}
+.iconDelete{
+    color: tomato;
+    cursor: pointer;
+}
+.singlepost-info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color:#Be9656;
+    font-family: "Varela Round", Arial, Helvetica, sans-serif;
+}
+.desc{
+    font-size: 20px;
+    line-height: 30px;
+    text-align: left;
+}
+.desc::first-letter{
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: 700;
+}

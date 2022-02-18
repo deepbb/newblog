@@ -1,0 +1,10 @@
+.ss{
+    display: flex;
+}
+.single{
+    flex:9;
+}
+.single-sidebar{
+    flex:3;
+    margin-left: 20px;
+}
