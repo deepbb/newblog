@@ -35,14 +35,14 @@ function Settings() {
             newPost.profilepic = filename;
             console.log(newPost);
             try {
-                const res = await axios.post("/upload",data)
+                const res = await axios.post("http://localhost:5000/api/upload",data)
                 console.log(res);
             } catch (err) {
     
             }
         }
             try {
-                const res = await axios.put ("/User/" + user._id , newPost)
+                const res = await axios.put ("http://localhost:5000/api/User/" + user._id , newPost)
                 console.log(res);
                 dispatch({type:"UPDATE_SUCCESS", payload:res.data})
                 setsuccess(true)
@@ -64,8 +64,7 @@ function Settings() {
                     <form className="settings-form" onSubmit={handleUpdate}>
                           <label className="profile-pic">Profile picture</label>  
                           <div className="settings-profilepic">
-                            < img 
-                            src={ file ? URL.createObjectURL(file) : PF+user.profilepic} className="settings-img" alt="" />
+                            <img src={ file ? URL.createObjectURL(file) : PF +user.profilepic} className="settings-img" alt="" />
                                {/* <img className="settings-img" 
                               src={user.profilepic}
                               alt="" />  */}

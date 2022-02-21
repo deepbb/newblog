@@ -7,6 +7,7 @@ function Write() {
     const [title,setTitle] = useState("")
     const [desc,setDesc] = useState("")
     const [file,setfile] = useState(null)
+    const [categories,setCategory] = useState([])
     const {user} = useContext(AuthContext)
     console.log(user.username);
 
@@ -26,13 +27,13 @@ function Write() {
             newPost.photo = filename;
             console.log(newPost);
             try {
-                const res = await axios.post("/upload",data)
+                const res = await axios.post("http://localhost:5000/api/upload",data)
                 console.log(res);
             } catch (err) {
     
             }
             try {
-                const res = await axios.post ("/post/" , newPost)
+                const res = await axios.post ("http://localhost:5000/api/post/" , newPost)
                 console.log(res);
                 window.location.replace("/post/" + res.data._id)
             } catch (err) {
@@ -65,6 +66,13 @@ function Write() {
                       value={title}
                       onChange={(e)=>setTitle(e.target.value)}
                       placeholder="Title of your story"
+                       autoFocus={true} />
+                        <input
+                     className="write-text-input"
+                      type="text"
+                      value={categories}
+                      onChange={(e)=>setCategory(e.target.value)}
+                      placeholder="enter the category"
                        autoFocus={true} />
                 </div>
                 <div className="write-text">

@@ -21,7 +21,7 @@ function Register() {
             toast.error("passwords doesn't match!")
         } else {
             try {
-                const res = await axios.post("/auth/register",{username,email,password})
+                const res = await axios.post("http://localhost:5000/api/auth/register",{username,email,password})
                 navigate("/login")
                  console.log(res);
             } catch (err) {

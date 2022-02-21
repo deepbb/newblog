@@ -18,7 +18,7 @@ function Singlepost() {
 
     useEffect(()=> {
         const fetchPost = async ()=> {
-                const res = await axios.get("/post/" + path)
+                const res = await axios.get("http://localhost:5000/api/post/" + path)
                 console.log(res.data);
                 setPost(res.data) 
         }
@@ -27,7 +27,7 @@ function Singlepost() {
 
     const handleDelete = async ()=> {
         try {
-            const res = await axios.delete(`/post/${post._id}`,{
+            const res = await axios.delete(`http://localhost:5000/api/post/${post._id}`,{
                 data : {username:user.username}
             })
             console.log(res);
@@ -40,7 +40,7 @@ function Singlepost() {
 
     const handleUpdate =async ()=> {
         try {
-            const res = await axios.put (`/post/${post._id}`,{
+            const res = await axios.put (`http://localhost:5000/api/post/${post._id}`,{
                 username:user.username,
                 title,
                 desc

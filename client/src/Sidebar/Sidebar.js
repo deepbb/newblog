@@ -7,9 +7,11 @@ function Sidebar() {
 
     const [cat,setCat] = useState([])
 
+
     useEffect(()=> {
         const fetchCategory =async ()=> {
-            const res = await axios.get("/category")
+            const res = await axios.get("http://localhost:5000/api/category")
+            console.log(res);
             setCat(res.data)
         }
         fetchCategory()
@@ -27,8 +29,11 @@ function Sidebar() {
             <div className="sidebar-item">
                 <span className="sidebar-category">Categories</span>
                 <ul className="sidbar-list">
-                  <Link to={`/?cat=${cat.categoryName}`}>  <li className="sidebar-items">{cat.categoryName}</li>
-                    </Link> 
+                  <Link to={`/?cat=${cat.categoryName}`}>  
+                    {cat.map((cate,index)=> (
+                        <li key={index}>{cate.categoryName}</li>
+                    ))}
+                    </Link>
                     {/* <li className="sidebar-items">Music</li>
                     <li className="sidebar-items">Cinema</li>
                     <li className="sidebar-items">Sports</li>

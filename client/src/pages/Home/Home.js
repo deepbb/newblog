@@ -14,7 +14,8 @@ function Home() {
 
     useEffect (()=> {
         const fetchPosts = async ()=>{
-             const res = await axios.get("https://blog-gold-xi.vercel.app/post/" + search)
+             const res = await axios.get("http://localhost:5000/api/post/" + search)
+             console.log(res.data);
              setPost(res.data)
         }
         fetchPosts()

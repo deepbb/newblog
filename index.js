@@ -5,6 +5,7 @@ const dotenv = require("dotenv")
 const mongoose = require("mongoose")
 const multer  = require("multer")
 const path = require("path")
+var cors = require('cors')
 const authRoute = require("./Routes/auth")
 const userRoute = require("./Routes/User")
 const postRoute = require("./Routes/post")
@@ -14,8 +15,9 @@ const categoryroute = require("./Routes/category")
 
 dotenv.config();
 app.use(express.json())
+app.use(cors())
 
-//app.use("/images",express.static(path.join(__dirname,"/images")))
+app.use("/images",express.static(path.join(__dirname,"/images")))
 
 
 // mongoose.connect(process.env.DATABASE,
